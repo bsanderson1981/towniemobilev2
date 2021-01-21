@@ -35,9 +35,11 @@ class MyApp extends StatelessWidget {
           ),
         ),
       ), // ... to here.
-      home: JsonParseDemo(),
+      home: buildJsonParseDemo(),
     );
   }
+
+  JsonParseDemo buildJsonParseDemo() => JsonParseDemo();
   // #enddocregion build
 }
 
@@ -55,10 +57,11 @@ class _JsonParseDemoState extends State<JsonParseDemo> {
   bool _loading;
 
 //quick fix make this getter
-
+//static //todo make live counter
   int mbakerdoz = 0;
   //get bakerdoz => mbakerdoz;
 
+//static  //todo make live counter
   int singles = 10;
 
   @override
@@ -106,12 +109,7 @@ class _JsonParseDemoState extends State<JsonParseDemo> {
               // product name
 
               subtitle: Text(
-<<<<<<< HEAD
-                  '\$ ' + (product.retailp.toStringAsFixed(2)
-                   + '  each   pid: ' + (product.pid.toString())),
-=======
                   '\$ ' + (product.retailp.toStringAsFixed(2) + '  each   index:' +'$index'),
->>>>>>>  added index trackinger for listview
                   style: TextStyle(
                       color: Colors.black,
                       fontSize: 18.0,
