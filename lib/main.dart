@@ -137,7 +137,7 @@ class _JsonParseDemoState extends State<JsonParseDemo> {
               ), */
 
               // old trailing: SizedBox(width: 150, child: CounterWidget()),
-              trailing: SizedBox(width: 300, child: CounterCubitPage()),
+              trailing: SizedBox(width: 150, child: CounterCubitPage()),
               // old  trailing: SizedBox(width: 150, child: CounterCubitPage()),
             );
           },
