@@ -13,6 +13,10 @@ import 'package:flutter/material.dart';
 import 'Services.dart';
 import 'Product.dart';
 import 'bagelcounter.dart';
+import 'cubit/counter_state.dart';
+import 'cubit/counter_cubit.dart';
+import 'cubit/counter_cubit_page.dart';
+import 'package:flutter_bloc/flutter_bloc.dart'; //addded 
 
 void main() => runApp(MyApp());
 
@@ -21,21 +25,26 @@ class MyApp extends StatelessWidget {
   // #docregion build
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Startup Name Generator',
-      theme: ThemeData(
-        // Add the 3 lines from here...
-        primarySwatch: Colors.blue,
-        textTheme: TextTheme(
-          headline1: TextStyle(
-            fontFamily: 'Corben',
-            fontWeight: FontWeight.w700,
-            fontSize: 24,
-            color: Colors.black,
+   return BlocProvider<CounterCubit>(   //added
+      create: (context) =>  CounterCubit(),  //added
+      child: MaterialApp(
+        title: 'Startup Name Generator',
+        theme: ThemeData(
+          // Add the 3 lines from here...
+          primarySwatch: Colors.blue,
+          textTheme: TextTheme(
+            headline1: TextStyle(
+              fontFamily: 'Corben',
+              fontWeight: FontWeight.w700,
+              fontSize: 24,
+              color: Colors.black,
+            ),
           ),
-        ),
-      ), // ... to here.
-      home: buildJsonParseDemo(),
+        ), // ... to here.
+        home: buildJsonParseDemo(),
+
+        // org      home: buildJsonParseDemo(),
+      ),
     );
   }
 
@@ -98,7 +107,8 @@ class _JsonParseDemoState extends State<JsonParseDemo> {
           itemCount: null == _product ? 0 : _product.length,
           itemBuilder: (context, index) {
             Product product = _product[index];
-            return ListTile(isThreeLine: true,
+            return ListTile(
+              isThreeLine: true,
               // leading: Icon(Icons.plus_one),
               // trailing: Icon(Icons.exposure_minus_1),
               title: Text(product.pname,
@@ -109,7 +119,10 @@ class _JsonParseDemoState extends State<JsonParseDemo> {
               // product name
 
               subtitle: Text(
-                  '\$ ' + (product.retailp.toStringAsFixed(2) + '  each   index:' +'$index'),
+                  '\$ ' +
+                      (product.retailp.toStringAsFixed(2) +
+                          '  each   index:' +
+                          '$index'),
                   style: TextStyle(
                       color: Colors.black,
                       fontSize: 18.0,
@@ -123,7 +136,9 @@ class _JsonParseDemoState extends State<JsonParseDemo> {
                 size: 36.0,
               ), */
 
-              trailing: SizedBox(width: 150, child: CounterWidget()),
+              // old trailing: SizedBox(width: 150, child: CounterWidget()),
+              trailing: SizedBox(width: 300, child: CounterCubitPage()),
+              // old  trailing: SizedBox(width: 150, child: CounterCubitPage()),
             );
           },
         ),
