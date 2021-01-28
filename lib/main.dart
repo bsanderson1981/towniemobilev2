@@ -16,7 +16,7 @@ import 'bagelcounter.dart';
 import 'cubit/counter_state.dart';
 import 'cubit/counter_cubit.dart';
 import 'cubit/counter_cubit_page.dart';
-import 'package:flutter_bloc/flutter_bloc.dart'; //addded 
+import 'package:flutter_bloc/flutter_bloc.dart'; //addded
 
 void main() => runApp(MyApp());
 
@@ -25,8 +25,9 @@ class MyApp extends StatelessWidget {
   // #docregion build
   @override
   Widget build(BuildContext context) {
-   return BlocProvider<CounterCubit>(   //added
-      create: (context) =>  CounterCubit(),  //added
+    return BlocProvider<CounterCubit>(
+      //added
+      create: (context) => CounterCubit(), //added
       child: MaterialApp(
         title: 'Startup Name Generator',
         theme: ThemeData(
@@ -100,6 +101,7 @@ class _JsonParseDemoState extends State<JsonParseDemo> {
       body: Container(
         color: Colors.white,
         child: ListView.separated(
+         // key: UniqueKey(), key not fix update all. 
           separatorBuilder: (context, index) => Divider(
             color: Colors.black,
             thickness: 2,
@@ -108,6 +110,7 @@ class _JsonParseDemoState extends State<JsonParseDemo> {
           itemBuilder: (context, index) {
             Product product = _product[index];
             return ListTile(
+              
               isThreeLine: true,
               // leading: Icon(Icons.plus_one),
               // trailing: Icon(Icons.exposure_minus_1),
