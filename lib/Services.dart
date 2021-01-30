@@ -8,8 +8,9 @@ import 'package:towniemobile/Product.dart';
 class Services {
 
   
-  //
-  static const String url = 'https://organic.towniebread.com/products.json';
+  //https://www.towniebagels.com/s/products.json
+  //static const String url = 'https://organic.towniebread.com/products.json';
+   static const String url = 'https://www.towniebagels.com/s/products.json';
  
   static Future<List<Product>> getUsers() async {
 

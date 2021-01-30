@@ -125,7 +125,7 @@ class _JsonParseDemoState extends State<JsonParseDemo> {
                   '\$ ' +
                       (product.retailp.toStringAsFixed(2) +
                           '  each   index:' +
-                          '$index'),
+                          '$index  ' +  ' qty '+product.qty.toString()),
                   style: TextStyle(
                       color: Colors.black,
                       fontSize: 18.0,

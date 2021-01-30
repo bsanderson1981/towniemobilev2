@@ -490,6 +490,7 @@
 		"dowfri": "Y",
 		"dowsat": "Y",
 		"retailp": 3.70,
+		"qty": 0,
 		"activemobile": "Y"
 	},
 	{
@@ -508,6 +509,7 @@
 		"dowfri": "Y",
 		"dowsat": "N",
 		"retailp": 6.95,
+		"qty": 0,
 		"activemobile": "Y"
 	},
 	{
@@ -526,6 +528,7 @@
 		"dowfri": "N",
 		"dowsat": "Y",
 		"retailp": 6.90,
+		"qty": 0,
 		"activemobile": "Y"
 	},
 	{
@@ -544,6 +547,7 @@
 		"dowfri": "N",
 		"dowsat": "N",
 		"retailp": 7.35,
+		"qty": 0,
 		"activemobile": "Y"
 	},
 	{
@@ -562,6 +566,7 @@
 		"dowfri": "N",
 		"dowsat": "Y",
 		"retailp": 5.55,
+		"qty": 0,
 		"activemobile": "Y"
 	},
 	{
@@ -580,6 +585,7 @@
 		"dowfri": "Y",
 		"dowsat": "Y",
 		"retailp": 7.00,
+		"qty": 0,
 		"activemobile": "Y"
 	},
 	{
@@ -598,6 +604,7 @@
 		"dowfri": "Y",
 		"dowsat": "Y",
 		"retailp": 7.50,
+		"qty": 0,
 		"activemobile": "Y"
 	},
 	{
@@ -616,6 +623,7 @@
 		"dowfri": "Y",
 		"dowsat": "N",
 		"retailp": 7.00,
+		"qty": 0,
 		"activemobile": "Y"
 	},
 	{
@@ -634,6 +642,7 @@
 		"dowfri": "Y",
 		"dowsat": "N",
 		"retailp": 7.00,
+		"qty": 0,
 		"activemobile": "Y"
 	},
 	{
@@ -652,6 +661,7 @@
 		"dowfri": "N",
 		"dowsat": "Y",
 		"retailp": 7.75,
+		"qty": 0,
 		"activemobile": "Y"
 	},
 	{
@@ -670,6 +680,7 @@
 		"dowfri": "Y",
 		"dowsat": "Y",
 		"retailp": 7.00,
+		"qty": 0,
 		"activemobile": "Y"
 	},
 	{
@@ -688,6 +699,7 @@
 		"dowfri": "N",
 		"dowsat": "N",
 		"retailp": 6.65,
+		"qty": 0,
 		"activemobile": "Y"
 	},
 	{
@@ -706,6 +718,7 @@
 		"dowfri": "Y",
 		"dowsat": "N",
 		"retailp": 6.25,
+		"qty": 0,
 		"activemobile": "Y"
 	},
 	{
@@ -724,6 +737,7 @@
 		"dowfri": "Y",
 		"dowsat": "N",
 		"retailp": 6.25,
+		"qty": 0,
 		"activemobile": "Y"
 	},
 	{

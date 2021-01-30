@@ -25,6 +25,7 @@ class Product {
         this.dowfri,
         this.dowsat,
         this.retailp,
+        this.qty,
         this.activemobile,
     });
 
@@ -43,6 +44,7 @@ class Product {
     Activemobile dowfri;
     Activemobile dowsat;
     double retailp;
+    int qty;
     Activemobile activemobile;
 
     factory Product.fromJson(Map<String, dynamic> json) => Product(
@@ -61,6 +63,7 @@ class Product {
         dowfri: activemobileValues.map[json["dowfri"]],
         dowsat: activemobileValues.map[json["dowsat"]],
         retailp: json["retailp"].toDouble(),
+        qty: json["qty"],
         activemobile: activemobileValues.map[json["activemobile"]],
     );
 
@@ -80,6 +83,7 @@ class Product {
         "dowfri": activemobileValues.reverse[dowfri],
         "dowsat": activemobileValues.reverse[dowsat],
         "retailp": retailp,
+        "qty": qty,
         "activemobile": activemobileValues.reverse[activemobile],
     };
 }
