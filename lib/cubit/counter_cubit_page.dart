@@ -38,30 +38,6 @@ class CounterCubitPage extends StatelessWidget {
                     ],
                  ),
                   
-
-                 /* 
-                  const SizedBox(height: 8),
-                 
-
-                  // add second windows of bagels
-                  Divider(
-                    height: 20,
-                    thickness: 10,
-                    color: Colors.black,
-                  ),
-
-                  Text(
-                    'Bakers Dozen: ${state.dozcount}',
-                    style: Theme.of(context).textTheme.headline3,
-                    textAlign: TextAlign.center,
-                  ),
-                  Text(
-                    'Singles: ${state.singcount}',
-                    style: Theme.of(context).textTheme.headline3,
-                    textAlign: TextAlign.center,
-                  ),
-                  const SizedBox(height: 8), */
-                  
                 ],
               ),
         ),

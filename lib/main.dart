@@ -25,27 +25,23 @@ class MyApp extends StatelessWidget {
   // #docregion build
   @override
   Widget build(BuildContext context) {
-    return BlocProvider<CounterCubit>(
-      //added
-      create: (context) => CounterCubit(), //added
-      child: MaterialApp(
-        title: 'Startup Name Generator',
-        theme: ThemeData(
-          // Add the 3 lines from here...
-          primarySwatch: Colors.blue,
-          textTheme: TextTheme(
-            headline1: TextStyle(
-              fontFamily: 'Corben',
-              fontWeight: FontWeight.w700,
-              fontSize: 24,
-              color: Colors.black,
-            ),
+    return MaterialApp(
+      title: 'Startup Name Generator',
+      theme: ThemeData(
+        // Add the 3 lines from here...
+        primarySwatch: Colors.blue,
+        textTheme: TextTheme(
+          headline1: TextStyle(
+            fontFamily: 'Corben',
+            fontWeight: FontWeight.w700,
+            fontSize: 24,
+            color: Colors.black,
           ),
-        ), // ... to here.
-        home: buildJsonParseDemo(),
+        ),
+      ), // ... to here.
+      home: buildJsonParseDemo(),
 
-        // org      home: buildJsonParseDemo(),
-      ),
+      // org      home: buildJsonParseDemo(),
     );
   }
 
@@ -101,7 +97,7 @@ class _JsonParseDemoState extends State<JsonParseDemo> {
       body: Container(
         color: Colors.white,
         child: ListView.separated(
-         // key: UniqueKey(), key not fix update all. 
+          // key: UniqueKey(), key not fix update all.
           separatorBuilder: (context, index) => Divider(
             color: Colors.black,
             thickness: 2,
@@ -110,7 +106,6 @@ class _JsonParseDemoState extends State<JsonParseDemo> {
           itemBuilder: (context, index) {
             Product product = _product[index];
             return ListTile(
-              
               isThreeLine: true,
               // leading: Icon(Icons.plus_one),
               // trailing: Icon(Icons.exposure_minus_1),
@@ -125,7 +120,9 @@ class _JsonParseDemoState extends State<JsonParseDemo> {
                   '\$ ' +
                       (product.retailp.toStringAsFixed(2) +
                           '  each   index:' +
-                          '$index  ' +  ' qty '+product.qty.toString()),
+                          '$index  ' +
+                          ' qty ' +
+                          product.qty.toString()),
                   style: TextStyle(
                       color: Colors.black,
                       fontSize: 18.0,
@@ -139,9 +136,13 @@ class _JsonParseDemoState extends State<JsonParseDemo> {
                 size: 36.0,
               ), */
 
-              // old trailing: SizedBox(width: 150, child: CounterWidget()),
-              trailing: SizedBox(width: 150, child: CounterCubitPage()),
-              // old  trailing: SizedBox(width: 150, child: CounterCubitPage()),
+              // need blocprovider here to only update context of each bagel.
+              trailing: SizedBox(
+                  width: 150,
+                  child: BlocProvider<CounterCubit>(
+                    create: (context) => CounterCubit(),
+                    child: CounterCubitPage(),
+                  )),
             );
           },
         ),
