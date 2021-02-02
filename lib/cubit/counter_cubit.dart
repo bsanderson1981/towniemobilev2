@@ -9,6 +9,7 @@ class CounterCubit extends Cubit<CounterCubitState> {
   
 
     emit(CounterCubitIncreased(
+      
       totalbagels: (state.totalbagels + 1),
       dozcount: ((state.totalbagels +1) ~/ 13),
       singcount: ((state.totalbagels +1) % 13),

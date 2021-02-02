@@ -22,6 +22,7 @@ void main() => runApp(MyApp());
 
 // #docregion MyApp
 class MyApp extends StatelessWidget {
+  final bool keepAlive = true;    // not working 
   // #docregion build
   @override
   Widget build(BuildContext context) {
@@ -90,6 +91,7 @@ class _JsonParseDemoState extends State<JsonParseDemo> {
 
   @override
   Widget build(BuildContext context) {
+    
     return Scaffold(
       appBar: AppBar(
         title: Text(_loading ? 'Loading...' : 'Bagels & Breads'),
@@ -97,6 +99,8 @@ class _JsonParseDemoState extends State<JsonParseDemo> {
       body: Container(
         color: Colors.white,
         child: ListView.separated(
+          key: UniqueKey(),
+          addAutomaticKeepAlives: true, //not working to sotp skroll delete
           // key: UniqueKey(), key not fix update all.
           separatorBuilder: (context, index) => Divider(
             color: Colors.black,
@@ -106,6 +110,7 @@ class _JsonParseDemoState extends State<JsonParseDemo> {
           itemBuilder: (context, index) {
             Product product = _product[index];
             return ListTile(
+              key: UniqueKey(),
               isThreeLine: true,
               // leading: Icon(Icons.plus_one),
               // trailing: Icon(Icons.exposure_minus_1),
@@ -117,29 +122,25 @@ class _JsonParseDemoState extends State<JsonParseDemo> {
               // product name
 
               subtitle: Text(
+                   
                   '\$ ' +
                       (product.retailp.toStringAsFixed(2) +
                           '  each   index:' +
                           '$index  ' +
                           ' qty ' +
                           product.qty.toString()),
-                  style: TextStyle(
+                          key: UniqueKey(),
+                  style: TextStyle( 
                       color: Colors.black,
                       fontSize: 18.0,
-                      fontWeight: FontWeight.w400)),
-              //PRICE OF ITEM
-
-              //TODO icon holder for adding quantiy selector for bagels 1-6 dropdown.dart  file called here
-              /*  trailing: Icon(
-                Icons.online_prediction_rounded,
-                color: Colors.blue,
-                size: 36.0,
-              ), */
-
-              // need blocprovider here to only update context of each bagel.
+                      fontWeight: FontWeight.w400)
+                      ),
+            
               trailing: SizedBox(
+                key: UniqueKey(),
                   width: 150,
                   child: BlocProvider<CounterCubit>(
+                    key: UniqueKey(),
                     create: (context) => CounterCubit(),
                     child: CounterCubitPage(),
                   )),
