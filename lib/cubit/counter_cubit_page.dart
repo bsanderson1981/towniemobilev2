@@ -3,13 +3,18 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'counter_cubit.dart';
 import 'counter_state.dart';
 
-class CounterCubitPage extends StatelessWidget {
+class CounterCubitPage extends StatefulWidget {
   // static const String routeName = '/counter_cubit';
   
   //@override
   //  bool get wantKeepAlive => true;  // not work
  // final bool keepAlive = true; // try to keep counter on skroll????
 
+  @override
+  _CounterCubitPageState createState() => _CounterCubitPageState();
+}
+
+class _CounterCubitPageState extends State<CounterCubitPage>  with AutomaticKeepAliveClientMixin {
   @override
   Widget build(BuildContext context) => Scaffold(
     key: UniqueKey(),
@@ -46,4 +51,8 @@ class CounterCubitPage extends StatelessWidget {
           ),
         ),
       );
+
+  @override
+  bool get wantKeepAlive => true;
+ 
 }
