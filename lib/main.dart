@@ -151,6 +151,7 @@ class _JsonParseDemoState extends State<JsonParseDemo> {
             //TODO get bakerdoz and etotal on footer working need to pass data between main and bagelcounter
 
             Text("Baker's Dozen: $mbakerdoz " + "    Singles:  $singles",
+            // Text("Baker's Dozen: $mbakerdoz " + "    Singles:  $singles", old static diplay totals
                 style: TextStyle(
                     color: Colors.white,
                     fontSize: 20.0,
