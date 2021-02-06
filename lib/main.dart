@@ -1,5 +1,3 @@
-
-
 import 'package:flutter/material.dart';
 import 'Services.dart';
 import 'Product.dart';
@@ -8,12 +6,16 @@ import 'cubit/counter_state.dart';
 import 'cubit/counter_cubit.dart';
 import 'cubit/counter_cubit_page.dart';
 import 'package:flutter_bloc/flutter_bloc.dart'; //addded
+import 'cart_total.dart'; // added to pull in cart totals
+
+
+
 
 void main() => runApp(MyApp());
 
 // #docregion MyApp
 class MyApp extends StatelessWidget {
-  final bool keepAlive = true;    // not working 
+  final bool keepAlive = true; // not working
   // #docregion build
   @override
   Widget build(BuildContext context) {
@@ -56,11 +58,11 @@ class _JsonParseDemoState extends State<JsonParseDemo> {
 
 //quick fix make this getter
 //static //todo make live counter
-  int mbakerdoz = 0;
+var mbakerdoz = CartTotal.inputtotal;
   //get bakerdoz => mbakerdoz;
 
 //static  //todo make live counter
-  int singles = 10;
+  var singles =  CartTotal.totalsingles;
 
   @override
   void initState() {
@@ -82,7 +84,6 @@ class _JsonParseDemoState extends State<JsonParseDemo> {
 
   @override
   Widget build(BuildContext context) {
-    
     return Scaffold(
       appBar: AppBar(
         title: Text(_loading ? 'Loading...' : 'Bagels & Breads'),
@@ -113,22 +114,20 @@ class _JsonParseDemoState extends State<JsonParseDemo> {
               // product name
 
               subtitle: Text(
-                   
                   '\$ ' +
                       (product.retailp.toStringAsFixed(2) +
                           '  each   index:' +
                           '$index  ' +
                           ' qty ' +
                           product.qty.toString()),
-                          key: UniqueKey(),
-                  style: TextStyle( 
+                  key: UniqueKey(),
+                  style: TextStyle(
                       color: Colors.black,
                       fontSize: 18.0,
-                      fontWeight: FontWeight.w400)
-                      ),
-            
+                      fontWeight: FontWeight.w400)),
+
               trailing: SizedBox(
-                key: UniqueKey(),
+                  key: UniqueKey(),
                   width: 150,
                   child: BlocProvider<CounterCubit>(
                     key: UniqueKey(),
@@ -150,8 +149,8 @@ class _JsonParseDemoState extends State<JsonParseDemo> {
             ),
             //TODO get bakerdoz and etotal on footer working need to pass data between main and bagelcounter
 
-            Text("Baker's Dozen: $mbakerdoz " + "    Singles:  $singles",
-            // Text("Baker's Dozen: $mbakerdoz " + "    Singles:  $singles", old static diplay totals
+           
+                Text("Baker's Dozen: $mbakerdoz " + "    Singles:  $singles",
                 style: TextStyle(
                     color: Colors.white,
                     fontSize: 20.0,

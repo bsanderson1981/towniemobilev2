@@ -15,12 +15,13 @@ class CounterCubit extends Cubit<CounterCubitState> {
     holdsingle = ((state.totalbagels + 1) % 13);
     print("+holdsingle: " + holdsingle.toStringAsFixed(2));
     print("+holdtotal: " + holdtotal.toStringAsFixed(2));
+    print("+holdcart: " + holdcart.toStringAsFixed(2));
     CartTotal(holdcart);
 
     emit(CounterCubitIncreased(
       totalbagels: (state.totalbagels + 1),
       // dozcount: ((state.totalbagels +1) ~/ 13),
-      // singcount: ((state.totalbagels +1) % 13),
+      singcount: ((state.totalbagels +1) % 13),
 
       // singcount: ((state.totalbagels +1) % 13),
     ));

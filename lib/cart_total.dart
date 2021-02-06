@@ -1,7 +1,7 @@
 class CartTotal {
-  int bageltotals = 0;
-  int totalsingles = 0;
-  int inputtotal = 0;
+  static int bageltotals = 0;
+  static int totalsingles = 0;
+  static int inputtotal = 0;
 
   CartTotal(inputtotal) {
     bageltotals = ((inputtotal) ~/ 13);
