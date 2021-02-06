@@ -1,4 +1,5 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:towniemobile/cart_total.dart';
 import 'counter_state.dart';
 
 class CounterCubit extends Cubit<CounterCubitState> {
@@ -9,10 +10,12 @@ class CounterCubit extends Cubit<CounterCubitState> {
       : super(CounterCubitInitial(dozcount: 0, singcount: 0, totalbagels: 0));
 
   void increment() {
+    int  holdcart = (state.totalbagels + 1);
     holdtotal = ((state.totalbagels + 1) ~/ 13);
     holdsingle = ((state.totalbagels + 1) % 13);
     print("+holdsingle: " + holdsingle.toStringAsFixed(2));
     print("+holdtotal: " + holdtotal.toStringAsFixed(2));
+    CartTotal(holdcart);
 
     emit(CounterCubitIncreased(
       totalbagels: (state.totalbagels + 1),
@@ -29,7 +32,7 @@ class CounterCubit extends Cubit<CounterCubitState> {
       holdtotal = ((state.totalbagels - 1) ~/ 13);
       holdsingle = ((state.totalbagels - 1) % 13);
       print("-holdsingle: " + holdsingle.toStringAsFixed(2));
-       print("-holdtotal: " + holdtotal.toStringAsFixed(2));
+      print("-holdtotal: " + holdtotal.toStringAsFixed(2));
       emit(CounterCubitDecreased(
         totalbagels: (state.totalbagels - 1),
         // dozcount: ((state.totalbagels -1) ~/ 13),
