@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
 import 'Services.dart';
 import 'Product.dart';
-import 'bagelcounter.dart';
-import 'cubit/counter_state.dart';
 import 'cubit/counter_cubit.dart';
+import 'cubit/counter_state.dart';
 import 'cubit/counter_cubit_page.dart';
 import 'package:flutter_bloc/flutter_bloc.dart'; //addded
 import 'cart_total.dart'; // added to pull in cart totals
-
 
 //2/8/2021
 //2/8/2021/2
@@ -59,11 +57,11 @@ class _JsonParseDemoState extends State<JsonParseDemo> {
 
 //quick fix make this getter
 //static //todo make live counter
-var mbakerdoz = CartTotal.inputtotal;
+  var mbakerdoz = CartTotal.inputtotal;
   //get bakerdoz => mbakerdoz;
 
 //static  //todo make live counter
-  var singles =  CartTotal.totalsingles;
+  var singles = CartTotal.totalsingles;
 
   @override
   void initState() {
@@ -150,12 +148,18 @@ var mbakerdoz = CartTotal.inputtotal;
             ),
             //TODO get bakerdoz and etotal on footer working need to pass data between main and bagelcounter
 
-           
-                Text("Baker's Dozen: $mbakerdoz " + "    Singles:  $singles",
+          BlocProvider<CounterCubit>(
+                    key: UniqueKey(),
+                    create: (context) => CounterCubit(),
+
+
+            child:Text("Baker's Dozen:  $mbakerdoz " + "    Singles:  $singles",
                 style: TextStyle(
                     color: Colors.white,
                     fontSize: 20.0,
                     fontWeight: FontWeight.w500)),
+
+          ),
 
             Spacer(),
             //IconButton(icon: Icon(Icons.search), onPressed: () {}),
