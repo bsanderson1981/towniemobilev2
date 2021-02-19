@@ -83,6 +83,7 @@ class _JsonParseDemoState extends State<JsonParseDemo> {
 
   @override
   Widget build(BuildContext context) {
+   
     return Scaffold(
       appBar: AppBar(
         title: Text(_loading ? 'Loading...' : 'Bagels & Breads'),
@@ -152,8 +153,8 @@ class _JsonParseDemoState extends State<JsonParseDemo> {
                     key: UniqueKey(),
                     create: (context) => CounterCubit(),
 
-
-            child:Text("Baker's Dozen:  $mbakerdoz " + "    Singles:  $singles",
+            //   child:Text("Baker's Dozen: " + CartTotal.bageltotals.toStringAsFixed(2)  + "  Singles: " + CartTotal.totalsingles.toStringAsFixed(2),
+            child:Text("Baker's Dozen: " + CartTotal.bageltotals.toStringAsFixed(2) + "  Singles: " + CartTotal.totalsingles.toStringAsFixed(2),
                 style: TextStyle(
                     color: Colors.white,
                     fontSize: 20.0,
