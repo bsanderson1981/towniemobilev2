@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:towniemobile/cart_total.dart';
 import 'counter_state.dart';
@@ -16,6 +17,8 @@ class CounterCubit extends Cubit<CounterCubitState> {
     print("+holdsingle: " + holdsingle.toStringAsFixed(2));
     print("+holdtotal: " + holdtotal.toStringAsFixed(2));
     print("+holdcart: " + holdcart.toStringAsFixed(2));
+    print("type:  ");
+    print(holdsingle.runtimeType);
     CartTotal(holdcart);
 
     emit(CounterCubitIncreased(
